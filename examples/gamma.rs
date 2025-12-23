@@ -1,6 +1,6 @@
 #![allow(clippy::print_stdout, reason = "Examples are okay to print to stdout")]
 
-use polymarket_client_sdk::gamma::GammaClient;
+use polymarket_client_sdk::gamma::Client;
 use polymarket_client_sdk::gamma::types::{
     ListTeamsRequest, ListTeamsRequestBuilder, RelatedTagsByIdRequestBuilder,
     RelatedTagsBySlugRequestBuilder, TagsRequestBuilder,
@@ -8,7 +8,7 @@ use polymarket_client_sdk::gamma::types::{
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    let client = GammaClient::default();
+    let client = Client::default();
 
     //---- sports endpoints
     println!(
