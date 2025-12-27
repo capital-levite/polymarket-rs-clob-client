@@ -4,4 +4,4 @@ pub mod types;
 #[cfg(feature = "ws")]
 pub mod ws;
 
-pub use client::{Client, Config, ConfigBuilder};
+pub use client::{Client, Config};
