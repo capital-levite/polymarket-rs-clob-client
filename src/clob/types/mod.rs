@@ -292,6 +292,15 @@ impl PartialEq for TickSize {
     }
 }
 
+impl Serialize for TickSize {
+    fn serialize<S>(&self, serializer: S) -> std::result::Result<S::Ok, S::Error>
+    where
+        S: Serializer,
+    {
+        Serialize::serialize(&self.as_decimal(), serializer)
+    }
+}
+
 impl<'de> Deserialize<'de> for TickSize {
     fn deserialize<D>(deserializer: D) -> std::result::Result<Self, D::Error>
     where
